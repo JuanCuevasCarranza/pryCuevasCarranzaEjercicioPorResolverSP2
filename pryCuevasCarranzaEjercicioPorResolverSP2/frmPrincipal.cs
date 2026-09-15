@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Windows.Forms;
 
@@ -58,6 +59,14 @@ namespace pryCuevasCarranzaEjercicioPorResolverSP2
                 }
                 else
                 {
+                    StreamWriter archivo;
+                    archivo = new StreamWriter("MiArchivoOculto");
+
+                    archivo.WriteLine("Codigo:  " + txtCodigo.Text +
+                    "Tipo Boleto:  " + cboTipoBoleto.Text);
+
+                    archivo.Close();
+
                     MessageBox.Show("Registramos su boleto", "Registro de boleto",
                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
