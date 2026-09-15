@@ -74,6 +74,8 @@
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(100, 23);
             txtCodigo.TabIndex = 3;
+            txtCodigo.TextChanged += txtCodigo_TextChanged;
+            txtCodigo.KeyPress += txtCodigo_KeyPress;
             // 
             // rbCorta
             // 
@@ -99,6 +101,7 @@
             // 
             // dtpFecha
             // 
+            dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(107, 35);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(200, 23);
@@ -131,6 +134,7 @@
             btnRegistrar.TabIndex = 9;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // frmPrincipal
             // 
@@ -146,7 +150,9 @@
             Controls.Add(lblCodigo);
             Controls.Add(lblFecha);
             Name = "frmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Venta Boleteria";
+            Load += frmPrincipal_Load;
             gbDistancia.ResumeLayout(false);
             gbDistancia.PerformLayout();
             ResumeLayout(false);
